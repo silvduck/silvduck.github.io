@@ -10,29 +10,34 @@ const photos = [
     "images/japan2024/008.jpg"
 ];
 
-// Obtener índice actual de la URL (o iniciar con la primera imagen)
-const params = new URLSearchParams(window.location.search);
-let currentIndex = parseInt(params.get("index")) || 0;
+let currentIndex = 0;
 
-// Actualizar imagen y contador
 function updatePage() {
     const photoElement = document.getElementById("current-photo");
     const counterElement = document.getElementById("counter");
 
     photoElement.src = photos[currentIndex];
-    counterElement.innerText = `${currentIndex + 1} / ${photos.length}`;
+    counterElement.textContent = `${currentIndex + 1} / ${photos.length}`;
 }
 
-// Cambiar a la imagen anterior
 function goToPrevious() {
     currentIndex = (currentIndex - 1 + photos.length) % photos.length;
-    window.location.href = `photo-viewer.html?index=${currentIndex}`;
+    updatePage();
 }
 
-// Cambiar a la imagen siguiente
 function goToNext() {
     currentIndex = (currentIndex + 1) % photos.length;
-    window.location.href = `photo-viewer.html?index=${currentIndex}`;
+    updatePage();
+}
+
+function goToFirst() {
+    currentIndex = 0;
+    updatePage();
+}
+
+function goToLast() {
+    currentIndex = photos.length - 1;
+    updatePage();
 }
 
 // Inicializar la página
