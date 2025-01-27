@@ -1,5 +1,5 @@
 // Configura el número total de imágenes en la carpeta actual
-const totalImages = 8; // Cambia esto dependiendo del número de imágenes en la carpeta actual
+const totalImages = 9; // Cambia esto dependiendo del número de imágenes en la carpeta actual
 const folderPath = "images/japan2024/";
 const fileExtension = ".jpg";
 
