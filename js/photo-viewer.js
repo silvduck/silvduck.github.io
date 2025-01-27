@@ -1,14 +1,10 @@
-// Lista de fotos
-const photos = [
-    "images/japan2024/001.jpg",
-    "images/japan2024/002.jpg",
-    "images/japan2024/003.jpg",
-    "images/japan2024/004.jpg",
-    "images/japan2024/005.jpg",
-    "images/japan2024/006.jpg",
-    "images/japan2024/007.jpg",
-    "images/japan2024/008.jpg"
-];
+// Configura el número total de imágenes en la carpeta actual
+const totalImages = 8; // Cambia esto dependiendo del número de imágenes en la carpeta actual
+const folderPath = "images/japan2024/";
+const fileExtension = ".jpg";
+
+// Genera dinámicamente la lista de fotos
+const photos = Array.from({ length: totalImages }, (_, i) => `${folderPath}${String(i + 1).padStart(3, '0')}${fileExtension}`);
 
 let currentIndex = 0;
 
