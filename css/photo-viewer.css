@@ -4,6 +4,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     height: 100vh;
     margin: 0;
 }
@@ -15,15 +16,13 @@ body {
 
 .photo-viewer img {
     max-width: 90%;
-    max-height: 80vh;
+    max-height: 70vh;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .nav-btn {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     background: rgba(0, 0, 0, 0.5);
     color: #fff;
     border: none;
@@ -34,14 +33,27 @@ body {
     z-index: 10;
 }
 
-.prev-btn {
-    left: 10px;
+.top-btn {
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-.next-btn {
-    right: 10px;
+.bottom-btn {
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .nav-btn:hover {
     background: rgba(0, 0, 0, 0.8);
+}
+
+.counter {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2rem;
+    color: #333;
 }

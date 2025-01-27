@@ -8,12 +8,21 @@
 </head>
 <body>
     <div class="photo-viewer">
-        <button class="nav-btn prev-btn">❮</button>
+        <!-- Botón de imagen anterior -->
+        <button class="nav-btn top-btn" onclick="goToPrevious()">❮</button>
+        
+        <!-- Imagen actual -->
         <img id="current-photo" src="images/japan2024/001.jpg" alt="Photo">
-        <button class="nav-btn next-btn">❯</button>
+        
+        <!-- Botón de imagen siguiente -->
+        <button class="nav-btn bottom-btn" onclick="goToNext()">❯</button>
+        
+        <!-- Contador -->
+        <div class="counter" id="counter">1 / 28</div>
     </div>
 
     <script>
+        // Lista de fotos
         const photos = [
             "images/japan2024/001.jpg",
             "images/japan2024/002.jpg",
@@ -23,28 +32,35 @@
             "images/japan2024/006.jpg",
             "images/japan2024/007.jpg",
             "images/japan2024/008.jpg"
-            // Add all photo paths here
         ];
 
-        let currentIndex = 0;
+        // Obtener índice actual de la URL (o iniciar con la primera imagen)
+        const params = new URLSearchParams(window.location.search);
+        let currentIndex = parseInt(params.get("index")) || 0;
 
-        const currentPhoto = document.getElementById('current-photo');
-        const prevBtn = document.querySelector('.prev-btn');
-        const nextBtn = document.querySelector('.next-btn');
+        // Actualizar imagen y contador
+        function updatePage() {
+            const photoElement = document.getElementById("current-photo");
+            const counterElement = document.getElementById("counter");
 
-        function updatePhoto() {
-            currentPhoto.src = photos[currentIndex];
+            photoElement.src = photos[currentIndex];
+            counterElement.innerText = `${currentIndex + 1} / ${photos.length}`;
         }
 
-        prevBtn.addEventListener('click', () => {
+        // Cambiar a la imagen anterior
+        function goToPrevious() {
             currentIndex = (currentIndex - 1 + photos.length) % photos.length;
-            updatePhoto();
-        });
+            window.location.href = `photo-viewer.html?index=${currentIndex}`;
+        }
 
-        nextBtn.addEventListener('click', () => {
+        // Cambiar a la imagen siguiente
+        function goToNext() {
             currentIndex = (currentIndex + 1) % photos.length;
-            updatePhoto();
-        });
+            window.location.href = `photo-viewer.html?index=${currentIndex}`;
+        }
+
+        // Inicializar la página
+        updatePage();
     </script>
 </body>
 </html>
