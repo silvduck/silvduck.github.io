@@ -1,64 +1,72 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #E3E0D1;
+    background-color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     height: 100vh;
     margin: 0;
-    color: #5C0D11;
 }
 
 .photo-viewer {
     position: relative;
     text-align: center;
-    background: #EDEBDF;
-    padding: 10px;
-    border: 1px solid #5C0D12;
-    display: inline-block;
 }
 
 .photo-viewer img {
     max-width: 90%;
     max-height: 70vh;
     border-radius: 8px;
-    display: block;
-    margin: 0 auto 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Botones de navegación */
-.nav-btn-container {
-    position: relative;
-    text-align: center;
-}
-
 .nav-btn {
-    display: inline-block;
-    font-size: 18px;
-    padding: 0 10px;
-    color: #5C0D11;
-    text-decoration: none;
-    transition: color 0.2s ease;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    font-size: 1.2rem;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
 }
 
 .nav-btn:hover {
-    color: #3C0A09;
+    opacity: 1;
+}
+
+.nav-btn.small {
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+    line-height: 30px;
 }
 
 /* Flecha superior */
 .top-btn {
-    margin-bottom: 10px;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 /* Flecha inferior */
 .bottom-btn {
-    margin-top: 10px;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 /* Contador */
 .counter {
-    font-size: 12px;
-    margin-top: 5px;
-    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1rem;
+    color: #333;
 }
