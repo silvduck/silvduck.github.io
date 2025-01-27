@@ -1,14 +1,21 @@
-// Configura el número total de imágenes en la carpeta actual
-const totalImages = 9; // Cambia esto dependiendo del número de imágenes en la carpeta actual
-const folderPath = "images/japan2024/";
-const fileExtension = ".jpg";
-
-// Genera dinámicamente la lista de fotos
-const photos = Array.from({ length: totalImages }, (_, i) => `${folderPath}${String(i + 1).padStart(3, '0')}${fileExtension}`);
-
+let photos = [];
 let currentIndex = 0;
 
+// Obtener la lista de fotos desde photos.json
+async function fetchPhotos() {
+    try {
+        const response = await fetch("images/japan2024/photos.json");
+        const data = await response.json();
+        photos = data.map(photo => `images/japan2024/${photo}`);
+        updatePage();
+    } catch (error) {
+        console.error("Error fetching photos:", error);
+    }
+}
+
 function updatePage() {
+    if (photos.length === 0) return;
+
     const photoElement = document.getElementById("current-photo");
     const counterElement = document.getElementById("counter");
 
@@ -37,4 +44,4 @@ function goToLast() {
 }
 
 // Inicializar la página
-updatePage();
+fetchPhotos();
