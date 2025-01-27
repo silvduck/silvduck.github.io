@@ -1,12 +1,19 @@
 let photos = [];
 let currentIndex = 0;
 
-// Obtener la lista de fotos desde photos.json
+// Obtener la carpeta desde el parámetro de la URL
+function getFolderFromURL() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get("folder") || "japan2024"; // Carpeta por defecto
+}
+
+// Obtener la lista de fotos desde photos.json en la carpeta seleccionada
 async function fetchPhotos() {
+    const folder = getFolderFromURL(); // Obtener la carpeta dinámica
     try {
-        const response = await fetch("images/japan2024/photos.json");
+        const response = await fetch(`images/${folder}/photos.json`);
         const data = await response.json();
-        photos = data.map(photo => `images/japan2024/${photo}`);
+        photos = data.map(photo => `images/${folder}/${photo}`);
         updatePage();
     } catch (error) {
         console.error("Error fetching photos:", error);
