@@ -9,12 +9,15 @@
 <body>
     <div class="photo-viewer">
         <!-- Botones de navegación -->
-        <button class="nav-btn small top-btn" onclick="goToPrevious()">❮</button>
+        <div class="nav-btn-container top-btn">
+            <a href="#" class="nav-btn" onclick="goToPrevious()">❮</a>
+        </div>
         <img id="current-photo" src="images/japan2024/001.jpg" alt="Photo">
-        <button class="nav-btn small bottom-btn" onclick="goToNext()">❯</button>
+        <div class="nav-btn-container bottom-btn">
+            <a href="#" class="nav-btn" onclick="goToNext()">❯</a>
+        </div>
         <div class="counter" id="counter">1 / 28</div>
     </div>
-
     <script src="js/photo-viewer.js"></script>
 </body>
 </html>
