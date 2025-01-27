@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Viewer</title>
+    <link rel="stylesheet" href="css/photo-viewer.css">
+</head>
+<body>
+    <div class="photo-viewer">
+        <button class="nav-btn prev-btn">❮</button>
+        <img id="current-photo" src="images/japan2024/001.jpg" alt="Photo">
+        <button class="nav-btn next-btn">❯</button>
+    </div>
+
+    <script>
+        const photos = [
+            "images/japan2024/001.jpg",
+            "images/japan2024/002.jpg",
+            "images/japan2024/003.jpg",
+            "images/japan2024/004.jpg",
+            "images/japan2024/005.jpg",
+            "images/japan2024/006.jpg",
+            "images/japan2024/007.jpg",
+            "images/japan2024/008.jpg"
+            // Add all photo paths here
+        ];
+
+        let currentIndex = 0;
+
+        const currentPhoto = document.getElementById('current-photo');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+
+        function updatePhoto() {
+            currentPhoto.src = photos[currentIndex];
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + photos.length) % photos.length;
+            updatePhoto();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % photos.length;
+            updatePhoto();
+        });
+    </script>
+</body>
+</html>
