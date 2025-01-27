@@ -21,39 +21,52 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Botones de navegación */
 .nav-btn {
     position: absolute;
     background: rgba(0, 0, 0, 0.5);
     color: #fff;
     border: none;
-    font-size: 2rem;
-    padding: 10px 20px;
+    font-size: 1.2rem;
+    padding: 5px 10px;
     cursor: pointer;
     border-radius: 50%;
     z-index: 10;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
 }
 
+.nav-btn:hover {
+    opacity: 1;
+}
+
+.nav-btn.small {
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+    line-height: 30px;
+}
+
+/* Flecha superior */
 .top-btn {
     top: 10px;
     left: 50%;
     transform: translateX(-50%);
 }
 
+/* Flecha inferior */
 .bottom-btn {
     bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
 }
 
-.nav-btn:hover {
-    background: rgba(0, 0, 0, 0.8);
-}
-
+/* Contador */
 .counter {
     position: absolute;
     bottom: 50px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: #333;
 }
