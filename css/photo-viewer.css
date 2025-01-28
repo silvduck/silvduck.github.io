@@ -10,7 +10,7 @@ body {
     flex-direction: column;
     align-items: center;
     height: 100vh;
-    padding-top: 60px; /* Espacio reservado para el header */
+    padding-top: 70px; /* Aumentamos espacio para el header */
 }
 
 /* Header fijo arriba a la izquierda con espacio garantizado */
@@ -19,22 +19,22 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    height: 50px; /* Tamaño fijo para garantizar espacio */
+    height: 60px; /* Aumentamos el tamaño del header */
     display: flex;
     align-items: center;
-    padding-left: 10px;
+    padding-left: 20px;
 }
 
-/* Botón Home */
+/* Botón Home más grande y visualmente destacado */
 .home-btn {
     background: #EDEBDF;
-    border: 1px solid #5C0D12;
-    padding: 5px 10px;
-    font-size: 12px;
+    border: 2px solid #5C0D12;
+    padding: 10px 18px; /* Más relleno */
+    font-size: 14px; /* Tamaño de texto más grande */
     font-weight: bold;
     text-decoration: none;
     color: #5C0D11;
-    border-radius: 5px;
+    border-radius: 8px; /* Bordes más redondeados */
     transition: background 0.3s ease, color 0.3s ease;
 }
 
