@@ -1,90 +1,59 @@
-/* Reset básico */
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #F5F5F5;
+    font-size: 12pt;
+    color: #5C0D11;
+    background-color: #E3E0D1;
     margin: 0;
     padding: 0;
-    text-align: center;
-}
-
-/* Header */
-header {
-    background: #333;
-    color: white;
-    padding: 15px;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 24px;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
-/* Contenedor del visor de fotos */
-.photo-viewer {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    margin-top: 20px;
-    padding: 20px;
+    align-items: center;
+    height: 100vh;
 }
 
-/* Imagen en el visor */
-.photo-viewer img {
-    max-width: 90%;
-    max-height: 70vh;
+.photo-viewer {
+    text-align: center;
+    background: #EDEBDF;
+    border: 1px solid #5C0D12;
+    padding: 20px;
     border-radius: 8px;
+    display: inline-block;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Navegación de fotos */
+.photo-viewer img {
+    max-width: 90%;
+    max-height: 70vh;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+/* Navegación */
 .navigation {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 15px;
-    margin-top: 10px;
-    background: white;
+    background: #EDEBDF;
+    border: 1px solid #5C0D12;
+    padding: 10px 20px;
     border-radius: 8px;
-    padding: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 10pt;
+    min-width: 400px;
 }
 
 .nav-btn {
-    color: #333;
-    font-size: 18px;
+    color: #5C0D11;
     text-decoration: none;
-    font-weight: bold;
-    padding: 5px 10px;
+    padding: 5px;
+    font-size: 14px;
     transition: color 0.3s ease;
 }
 
 .nav-btn:hover {
-    color: #000;
+    color: #3C0A09;
 }
 
 .counter {
-    font-size: 14px;
     font-weight: bold;
+    font-size: 12px;
 }

@@ -4,22 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Photo Viewer</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/photo-viewer.css">
 </head>
 <body>
-
-    <!-- Header de navegación -->
-    <header>
-        <h1>My Photo Gallery</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">🏠 Home</a></li>
-                <li><a href="photo-viewer.html?folder=japan2024">Japan 2024</a></li>
-                <li><a href="photo-viewer.html?folder=amsterdam2022">Amsterdam 2022</a></li>
-            </ul>
-        </nav>
-    </header>
-
     <div class="photo-viewer">
         <img id="current-photo" src="" alt="Photo">
         <div class="navigation">
@@ -30,7 +17,6 @@
             <a href="#" class="nav-btn last" onclick="goToLast()">⏭</a>
         </div>
     </div>
-
     <script src="js/photo-viewer.js"></script>
 </body>
 </html>
