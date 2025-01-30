@@ -1,38 +1,51 @@
 /* Reset básico */
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #F5F5F5;
+    font-size: 12pt;
+    color: #5C0D11;
+    background-color: #E3E0D1;
     margin: 0;
     padding: 0;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
 }
 
-/* Header */
+/* Header similar a photo-viewer */
 header {
-    background: #333;
+    background: #5C0D11;
     color: white;
     padding: 15px;
+    width: 100%;
     text-align: center;
+    font-size: 18px;
+    font-weight: bold;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 24px;
+/* Contenedor principal con el mismo estilo de photo-viewer */
+.gallery-container {
+    background: #EDEBDF;
+    border: 1px solid #5C0D12;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+    max-width: 80%;
 }
 
-/* Galería */
+/* Galería similar a photo-viewer */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Tamaño más grande */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Tamaño grande y responsive */
     gap: 20px;
-    max-width: 1200px;
-    margin: 30px auto;
     padding: 10px;
+    justify-content: center;
 }
 
-/* Contenedor de cada imagen */
+/* Estilo de cada imagen */
 .gallery-item {
-    border-radius: 10px;
+    border-radius: 8px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -41,11 +54,11 @@ header h1 {
     display: block;
 }
 
-/* Imagen de la galería */
+/* Imagen dentro de la galería */
 .gallery-item img {
     width: 100%;
     height: auto;
-    border-radius: 10px;
+    border-radius: 8px;
     object-fit: cover;
 }
 
