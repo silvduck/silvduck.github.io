@@ -98,3 +98,18 @@ header {
     font-weight: bold;
     font-size: 12px;
 }
+
+/* Asegurar que el título "Photo Gallery" sea blanco */
+header h1 a {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: bold;
+    transition: transform 0.2s ease, color 0.3s ease;
+}
+
+/* Efecto al pasar el ratón: agrandar ligeramente */
+header h1 a:hover {
+    transform: scale(1.1);
+    color: #EDEBDF; /* Un blanco suave para diferenciar */
+}
