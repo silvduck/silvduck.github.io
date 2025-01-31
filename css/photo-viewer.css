@@ -1,9 +1,9 @@
-/* Reset básico */
+/* Estilo general */
 body {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 12pt;
-    color: #EDEDED;
-    background-color: #1A1E2B; /* Azul oscuro */
+    font-size: 14px;
+    color: white;
+    background-color: #0f172a; /* Azul oscuro */
     margin: 0;
     padding: 0;
     display: flex;
@@ -12,104 +12,97 @@ body {
     min-height: 100vh;
 }
 
-/* Header igual que en index.html */
+/* Header */
 header {
-    background: #12151E; /* Azul más oscuro */
+    background: #1e293b; /* Azul oscuro medio */
     color: white;
-    padding: 15px;
+    padding: 20px;
     width: 100%;
     text-align: center;
-    font-size: 18px;
+    font-size: 24px;
     font-weight: bold;
 }
 
-/* Botón Home arriba a la izquierda */
-.nav-top {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-}
-
-.home-btn {
-    background: #EDEBDF;
-    border: 2px solid #5C0D12;
-    padding: 10px 18px;
-    font-size: 14px;
-    font-weight: bold;
-    text-decoration: none;
-    color: #5C0D11;
-    border-radius: 8px;
-    transition: background 0.3s ease, color 0.3s ease;
-}
-
-.home-btn:hover {
-    background: #5C0D11;
-    color: #EDEBDF;
-}
-
-/* Contenedor del visor de fotos */
-.photo-viewer {
-    text-align: center;
-    background: #23273A; /* Azul intermedio */
-    border: 1px solid #2D3143;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    margin-top: 20px;
-}
-
-/* Imagen en el visor */
-.photo-viewer img {
-    max-width: 90%;
-    max-height: 70vh;
-    margin-bottom: 10px;
-    border-radius: 8px;
-}
-
-/* Navegación de fotos */
-.navigation {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #EDEBDF;
-    border: 1px solid #5C0D12;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-size: 10pt;
-    min-width: 400px;
-    margin-top: 10px;
-}
-
-/* Botones de navegación */
-.nav-btn {
-    color: #5C0D11;
-    text-decoration: none;
-    padding: 5px 10px;
-    font-size: 14px;
-    transition: color 0.3s ease;
-}
-
-.nav-btn:hover {
-    color: #3C0A09;
-}
-
-/* Contador de imágenes */
-.counter {
-    font-weight: bold;
-    font-size: 12px;
-}
-
-/* Asegurar que el título "Photo Gallery" sea blanco */
+/* Enlace del título */
 header h1 a {
     color: white;
     text-decoration: none;
-    font-size: 22px;
+    font-size: 26px;
     font-weight: bold;
     transition: transform 0.2s ease, color 0.3s ease;
 }
 
-/* Efecto al pasar el ratón: agrandar ligeramente */
 header h1 a:hover {
     transform: scale(1.1);
-    color: #EDEBDF; /* Un blanco suave para diferenciar */
+    color: #94a3b8;
+}
+
+/* Contenedor de la foto */
+.photo-viewer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Imagen de la foto */
+.photo-viewer img {
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.photo-viewer img:hover {
+    transform: scale(1.02);
+}
+
+/* Navegación */
+.navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 15px;
+}
+
+/* Botones de navegación */
+.nav-btn {
+    background: #ffffff;
+    color: #1e293b;
+    font-size: 18px;
+    border: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.nav-btn:hover {
+    background: #94a3b8;
+    transform: scale(1.1);
+}
+
+/* Contador */
+.counter {
+    font-weight: bold;
+    font-size: 18px;
+    margin: 0 10px;
+}
+
+/* Estilos de los banners */
+.ad-space {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.ad-space img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
