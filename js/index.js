@@ -1,39 +1,41 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const gallery = document.querySelector(".gallery");
+    const folders = ["japan2024", "amsterdam2022", "berlin2019"];
+    const galleryContainer = document.querySelector(".gallery");
 
-    async function loadGalleries() {
-        try {
-            const response = await fetch("images/galleries.json");
-            const data = await response.json();
-            gallery.innerHTML = ""; // Limpia la galería antes de agregar contenido
+    function loadGalleries() {
+        galleryContainer.innerHTML = ""; // Limpiar el contenedor antes de agregar contenido
 
-            data.forEach(folder => {
-                const galleryItem = document.createElement("div");
-                galleryItem.classList.add("gallery-item");
+        folders.forEach(folder => {
+            const coverPath = `images/${folder}/cover.jpg`;
 
-                const link = document.createElement("a");
-                link.href = `photo-viewer.html?folder=${folder.name}`;
+            // Crear el contenedor de la imagen
+            const galleryItem = document.createElement("div");
+            galleryItem.classList.add("gallery-item");
 
-                const img = document.createElement("img");
-                img.src = `images/${folder.name}/${folder.cover}`;
-                img.alt = folder.name;
+            // Crear el enlace
+            const link = document.createElement("a");
+            link.href = `photo-viewer.html?folder=${folder}`;
 
-                link.appendChild(img);
-                galleryItem.appendChild(link);
-                gallery.appendChild(galleryItem);
-            });
+            // Crear la imagen
+            const img = document.createElement("img");
+            img.src = coverPath;
+            img.alt = `Cover of ${folder}`;
 
-            // Inicializar Masonry después de cargar las imágenes
+            // Insertar elementos en la estructura correcta
+            link.appendChild(img);
+            galleryItem.appendChild(link);
+            galleryContainer.appendChild(galleryItem);
+        });
+
+        // Inicializar Masonry después de cargar las imágenes
+        setTimeout(() => {
             new Masonry(".gallery", {
                 itemSelector: ".gallery-item",
                 columnWidth: ".gallery-item",
                 gutter: 10,
                 fitWidth: true
             });
-
-        } catch (error) {
-            console.error("Error loading galleries:", error);
-        }
+        }, 100);
     }
 
     loadGalleries();
