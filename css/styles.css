@@ -1,84 +1,39 @@
-/* Reset básico */
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 12pt;
-    color: #5C0D11;
-    background-color: #E3E0D1;
+    font-family: Arial, sans-serif;
+    background-color: #F8F9FA;
     margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
 }
 
-/* Header similar a photo-viewer */
 header {
     background: #5C0D11;
     color: white;
     padding: 15px;
-    width: 100%;
     text-align: center;
-    font-size: 18px;
+    font-size: 24px;
     font-weight: bold;
 }
 
-/* Contenedor principal con el mismo estilo de photo-viewer */
-.gallery-container {
-    background: #EDEBDF;
-    border: 1px solid #5C0D12;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    margin-top: 20px;
-    max-width: 80%;
-}
-
-/* Galería similar a photo-viewer */
 .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Tamaño grande y responsive */
-    gap: 20px;
-    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    padding: 20px;
 }
 
-/* Estilo de cada imagen */
 .gallery-item {
+    margin: 10px;
     border-radius: 8px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.gallery-item a {
-    display: block;
-}
-
-/* Imagen dentro de la galería */
 .gallery-item img {
     width: 100%;
     height: auto;
     border-radius: 8px;
-    object-fit: cover;
 }
 
-/* Efecto al pasar el ratón */
 .gallery-item:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Asegurar que el título "Photo Gallery" sea blanco */
-header h1 a {
-    color: white;
-    text-decoration: none;
-    font-size: 22px;
-    font-weight: bold;
-    transition: transform 0.2s ease, color 0.3s ease;
-}
-
-/* Efecto al pasar el ratón: agrandar ligeramente */
-header h1 a:hover {
-    transform: scale(1.1);
-    color: #EDEBDF; /* Un blanco suave para diferenciar */
 }

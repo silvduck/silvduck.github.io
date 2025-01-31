@@ -1,28 +1,40 @@
-// Lista de carpetas disponibles (añadir más según necesites)
-const folders = ["japan2024", "amsterdam2022", "berlin2019"];
+document.addEventListener("DOMContentLoaded", function () {
+    const gallery = document.querySelector(".gallery");
 
-// Contenedor donde se insertarán las imágenes
-const galleryContainer = document.getElementById("gallery-container");
+    async function loadGalleries() {
+        try {
+            const response = await fetch("images/galleries.json");
+            const data = await response.json();
+            gallery.innerHTML = ""; // Limpia la galería antes de agregar contenido
 
-// Generar dinámicamente la galería
-folders.forEach(folder => {
-    const coverPath = `images/${folder}/cover.jpg`;
+            data.forEach(folder => {
+                const galleryItem = document.createElement("div");
+                galleryItem.classList.add("gallery-item");
 
-    // Crear el contenedor de la imagen
-    const galleryItem = document.createElement("div");
-    galleryItem.classList.add("gallery-item");
+                const link = document.createElement("a");
+                link.href = `photo-viewer.html?folder=${folder.name}`;
 
-    // Crear el enlace
-    const link = document.createElement("a");
-    link.href = `photo-viewer.html?folder=${folder}`;
+                const img = document.createElement("img");
+                img.src = `images/${folder.name}/${folder.cover}`;
+                img.alt = folder.name;
 
-    // Crear la imagen
-    const img = document.createElement("img");
-    img.src = coverPath;
-    img.alt = `Cover of ${folder}`;
+                link.appendChild(img);
+                galleryItem.appendChild(link);
+                gallery.appendChild(galleryItem);
+            });
 
-    // Insertar elementos en la estructura correcta
-    link.appendChild(img);
-    galleryItem.appendChild(link);
-    galleryContainer.appendChild(galleryItem);
+            // Inicializar Masonry después de cargar las imágenes
+            new Masonry(".gallery", {
+                itemSelector: ".gallery-item",
+                columnWidth: ".gallery-item",
+                gutter: 10,
+                fitWidth: true
+            });
+
+        } catch (error) {
+            console.error("Error loading galleries:", error);
+        }
+    }
+
+    loadGalleries();
 });
