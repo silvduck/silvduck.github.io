@@ -51,8 +51,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
 
     function updateAds() {
-        document.getElementById("ad-top").src = `ads/horizontal1.png?cache=${Date.now()}`;
-        document.getElementById("ad-bottom").src = `ads/horizontal1.png?cache=${Date.now()}`;
+        document.getElementById("ad-top").src = `images/ads/horitzontal.png?cache=${Date.now()}`;
+        document.getElementById("ad-bottom").src = `images/ads/horitzontal.png?cache=${Date.now()}`;
     }
 
     document.getElementById("prev-btn").addEventListener("click", goToPrevious);
