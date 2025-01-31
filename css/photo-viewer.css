@@ -2,8 +2,8 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12pt;
-    color: #5C0D11;
-    background-color: #E3E0D1;
+    color: #EDEDED;
+    background-color: #1A1E2B; /* Azul oscuro */
     margin: 0;
     padding: 0;
     display: flex;
@@ -14,7 +14,7 @@ body {
 
 /* Header igual que en index.html */
 header {
-    background: #5C0D11;
+    background: #12151E; /* Azul más oscuro */
     color: white;
     padding: 15px;
     width: 100%;
@@ -50,11 +50,11 @@ header {
 /* Contenedor del visor de fotos */
 .photo-viewer {
     text-align: center;
-    background: #EDEBDF;
-    border: 1px solid #5C0D12;
+    background: #23273A; /* Azul intermedio */
+    border: 1px solid #2D3143;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     margin-top: 20px;
 }
 
