@@ -1,9 +1,9 @@
 /* Estilo general */
 body {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
-    color: white;
-    background-color: #0f172a; /* Azul oscuro */
+    font-size: 12pt;
+    background-color: #1A1E2B !important; /* Forzar el fondo */
+    color: #EDEDED;
     margin: 0;
     padding: 0;
     display: flex;
@@ -12,14 +12,19 @@ body {
     min-height: 100vh;
 }
 
+/* Asegurar que el container no tenga otro fondo */
+.container {
+    background-color: transparent !important;
+}
+
 /* Header */
 header {
-    background: #1e293b; /* Azul oscuro medio */
+    background: #12151E; /* Azul más oscuro */
     color: white;
-    padding: 20px;
-    width: 100%;
     text-align: center;
-    font-size: 24px;
+    padding: 15px 0;
+    width: 100%;
+    font-size: 18px;
     font-weight: bold;
 }
 
@@ -39,6 +44,7 @@ header h1 a:hover {
 
 /* Contenedor de la foto */
 .photo-viewer {
+    background-color: #1A1E2B; /* Azul oscuro */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -47,6 +53,7 @@ header h1 a:hover {
 
 /* Imagen de la foto */
 .photo-viewer img {
+    background-color: #1A1E2B; /* Azul oscuro */
     max-width: 90%;
     max-height: 80vh;
     border-radius: 8px;
@@ -59,10 +66,11 @@ header h1 a:hover {
 
 /* Navegación */
 .navigation {
+    background-color: #1A1E2B; /* Azul oscuro */
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(255, 255, 255, 0.1);
+
     border-radius: 10px;
     padding: 15px;
     margin-top: 15px;
@@ -70,8 +78,8 @@ header h1 a:hover {
 
 /* Botones de navegación */
 .nav-btn {
-    background: #ffffff;
-    color: #1e293b;
+    background-color: #1A1E2B; /* Azul oscuro */
+    color: #12151E;
     font-size: 18px;
     border: none;
     padding: 10px 15px;
@@ -82,7 +90,7 @@ header h1 a:hover {
 }
 
 .nav-btn:hover {
-    background: #94a3b8;
+    background-color: #1A1E2B; /* Azul oscuro */
     transform: scale(1.1);
 }
 

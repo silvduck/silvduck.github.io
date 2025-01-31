@@ -12,7 +12,7 @@ body {
     min-height: 100vh;
 }
 
-/* Header similar a photo-viewer */
+/* Header */
 header {
     background: #12151E; /* Azul más oscuro */
     color: white;
@@ -21,6 +21,20 @@ header {
     width: 100%;
     font-size: 18px;
     font-weight: bold;
+}
+
+/* Enlace del título */
+header h1 a {
+    color: white;
+    text-decoration: none;
+    font-size: 26px;
+    font-weight: bold;
+    transition: transform 0.2s ease, color 0.3s ease;
+}
+
+header h1 a:hover {
+    transform: scale(1.1);
+    color: #94a3b8;
 }
 
 /* Contenedor principal con el mismo estilo de photo-viewer */
