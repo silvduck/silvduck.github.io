@@ -1,42 +1,23 @@
 document.addEventListener("DOMContentLoaded", function () {
     const folders = ["japan2024", "amsterdam2022", "berlin2019"];
-    const galleryContainer = document.querySelector(".gallery");
+    const galleryContainer = document.getElementById("gallery-container");
 
-    function loadGalleries() {
-        galleryContainer.innerHTML = ""; // Limpiar el contenedor antes de agregar contenido
+    folders.forEach(folder => {
+        const coverPath = `images/${folder}/cover.jpg`;
+        const galleryItem = document.createElement("div");
+        galleryItem.classList.add("col");
 
-        folders.forEach(folder => {
-            const coverPath = `images/${folder}/cover.jpg`;
+        const link = document.createElement("a");
+        link.href = `photo-viewer.html?folder=${folder}`;
+        link.classList.add("gallery-item");
 
-            // Crear el contenedor de la imagen
-            const galleryItem = document.createElement("div");
-            galleryItem.classList.add("gallery-item");
+        const img = document.createElement("img");
+        img.src = coverPath;
+        img.alt = `Cover of ${folder}`;
+        img.classList.add("img-fluid", "rounded");
 
-            // Crear el enlace
-            const link = document.createElement("a");
-            link.href = `photo-viewer.html?folder=${folder}`;
-
-            // Crear la imagen
-            const img = document.createElement("img");
-            img.src = coverPath;
-            img.alt = `Cover of ${folder}`;
-
-            // Insertar elementos en la estructura correcta
-            link.appendChild(img);
-            galleryItem.appendChild(link);
-            galleryContainer.appendChild(galleryItem);
-        });
-
-        // Inicializar Masonry después de cargar las imágenes
-        setTimeout(() => {
-            new Masonry(".gallery", {
-                itemSelector: ".gallery-item",
-                columnWidth: ".gallery-item",
-                gutter: 10,
-                fitWidth: true
-            });
-        }, 100);
-    }
-
-    loadGalleries();
+        link.appendChild(img);
+        galleryItem.appendChild(link);
+        galleryContainer.appendChild(galleryItem);
+    });
 });
