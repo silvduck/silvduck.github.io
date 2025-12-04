@@ -4,3 +4,13 @@ A small, minimal web portfolio showcasing my **35mm film photography**.
 Each album represents a trip or a roll of film, displayed in a clean, distraction-free layout inspired by visual journals and analog aesthetics 🎞️✨
 
 Live site: **https://www.silvduck.com**
+
+---
+
+## 🛠️ Future ideas / things I'd love to add  
+(A little roadmap for when I pick up the project again)
+
+- Add more film rolls as I shoot them  
+- Create a simple *About me* page  
+- Optional dark mode   
+- Add subtle film-inspired details (grain, white borders, etc.)
