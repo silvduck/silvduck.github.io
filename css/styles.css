@@ -25,3 +25,25 @@ h1 {
     aspect-ratio: 1 / 1;
     object-fit: cover;
 }
+
+/* --- PÁGINAS DE ÁLBUM (tipo Drewscape) --- */
+
+.album-cover {
+    max-width: 480px;
+    border-radius: 4px;
+}
+
+.album-description {
+    max-width: 620px;
+    margin: 0 auto;
+}
+
+/* Las fotos del álbum: centradas, grandes, con un poco de redondeo */
+.album-images {
+    text-align: center;
+}
+
+.album-photo {
+    border-radius: 4px;
+    max-width: 100%;
+}
