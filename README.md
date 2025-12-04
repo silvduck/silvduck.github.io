@@ -1,11 +1,6 @@
-# Improvements to Implement
+# 📸 silvia's 35mm journal
 
-## 📌 Index Page
-- On small screens, move the banners **above and below** the gallery instead of the sides.
-- Consider bringing back the **hover effect** on images, making them slightly **larger** when hovered.
+A small, minimal web portfolio showcasing my **35mm film photography**.  
+Each album represents a trip or a roll of film, displayed in a clean, distraction-free layout inspired by visual journals and analog aesthetics 🎞️✨
 
-## 📌 Photo Viewer
-- **Reduce** the size of the banners and **remove rounded corners** for a sharper look.
-- **Redesign navigation controls**:
-  - Replace emojis with **white text**.
-  - Increase **font size** for better readability.
+Live site: **https://www.silvduck.com**
